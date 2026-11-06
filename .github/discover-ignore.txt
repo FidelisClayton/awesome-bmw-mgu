@@ -1,0 +1,64 @@
+# Repositories the discovery workflow should not suggest again.
+# One owner/repo per line; anything after the first space is a note.
+
+# Copies that don't say what they add (CONTRIBUTING.md: forks only when they say what they add)
+Dante1243/dante-idrive-apps        copy of idrive7-apps
+solefir-org/penky_g20-mgu          copy of idrive7-apps; README doesn't describe penky_g20
+vtechnics/idrive7-apps             fork of idrive7-apps
+Wallezy/idrive-apps                fork of idrive-apps
+ionutz87bc/MGU_store               copy of mgu-store
+chriskilagmail/bmw-weather-idrive7 has its own weather app, but its README is idrive7-apps' and doesn't describe it
+
+# Reviewed and left out
+JuMalIO/idrive7-apps               no README or manifest
+bhaukal01/mgu-store                no description or manifest
+bhaukal01/mgu-store-backend        no description
+selcip/mgu-app-builder             no description or README content
+KhiSpec/Juicewrld-Player-App       single-artist music player
+DaVinchi2KXX/mgupi-store           unrelated
+kdrcoding/esysmax-releases         E-Sys launcher, not MGU
+kdrcoding/fake-car                 E-Sys practice tool, not MGU
+e-sys-bmw/bmw-e-sys-coding-tutorial  general coding tutorial
+bulanov55/yandex-music-idrive7     UI prototype only, not an installable app (per its README)
+jaimeen77-cmyk/idrive-app-makegif-windows  GIF-making script, not an app
+PheloMguca/PheloMguca-CPUT-Community-Store  unrelated web app
+
+# Older head units or physical clusters, not MGU
+NCPlyn/BMWClusterClock
+GaluzaCZ/bmw-cluster-tools
+nithin-aikkattumadathil/BMW-INSTRUMENT-CLUSTER
+tsharp42/E46ClusterDriver
+atlanteg/nbt-updates
+cheRoma/bmw-idrive-launcher
+
+# Name matches for the IDrive backup service and other unrelated projects
+Akhtar1988/IDriveApp
+klauriondareich/IDrive-app
+MaylsonS/idrive-app
+Navaneedhan/Idrive-app
+NeoMeta-Modernist/idrivetooquicklyapp.app
+idiveusa/how-to-login-idrive-app
+BernaHD18/iDRIVE
+passionternrecoup/Idrive-Pro-Desktop-2026
+Mergeplispout/Idrive-Data-Snapshot-Manager
+fcole90/idrive-backup-helper
+AdobeDocs/experience-manager-learn.en
+arsovskidario/project-honey
+ashishk007/MAST90106_Group_24
+cirosantilli/expired-domain-names-by-day-2012
+CSID-DGU/2021-2-OSSP2-DodgeCounselor-5
+gasparRuben01/orga_de_computadoras
+gwislab/gwislab-strapi-frontend-template
+hrosiak/nurex
+jengler/bench_ds_projects
+kookiatsuetrong/vetala
+latin-ocr/macciiplautiqua01maigoog
+mackorone/spotify-playlist-archive-2
+maticue/vertica-helm-kubernetes
+mco-gh/notes
+michaela03/GUI
+NewCasino/vulkan-casino
+samsmithnz/Big10GBRepo
+samsmithnz/Big20GBRepo
+Vedette1/MCF.ahk
+vsvipul/CS307-SystemPracticum

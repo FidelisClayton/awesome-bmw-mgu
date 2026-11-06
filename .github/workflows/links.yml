@@ -1,0 +1,31 @@
+name: Check links
+
+on:
+  pull_request:
+  schedule:
+    - cron: "0 7 * * 1" # Mondays, 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # The forum blocks automated requests, and owner/repo is the format example.
+          args: >-
+            --no-progress
+            --max-retries 3
+            --retry-wait-time 10
+            --accept 200,206,429
+            --exclude 'bimmerpost\.com'
+            --exclude 'github\.com/owner/repo'
+            README.md CONTRIBUTING.md
+          fail: true
+          token: ${{ github.token }}

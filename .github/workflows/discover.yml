@@ -1,0 +1,69 @@
+name: Discover new projects
+
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Mondays, 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Search GitHub for MGU projects
+        env:
+          # Code search needs a user token. Add a fine-grained token with read-only
+          # access to public repositories as the SEARCH_TOKEN secret; without it,
+          # only the repository searches below run.
+          GH_TOKEN: ${{ secrets.SEARCH_TOKEN || github.token }}
+        run: |
+          set -u
+          : > found.txt
+          gh search code --filename mgu-repo.json --limit 100 --json repository --jq '.[].repository.nameWithOwner' >> found.txt \
+            || echo "::warning::Code search for mgu-repo.json failed. Set the SEARCH_TOKEN secret."
+          gh search code mguHmi --limit 100 --json repository --jq '.[].repository.nameWithOwner' >> found.txt \
+            || echo "::warning::Code search for mguHmi failed. Set the SEARCH_TOKEN secret."
+          for q in "mgu store" "mgu-store" "idrive 7 app" "iDrive MGU" "bmw mgu" "idrive7" "idrive8 app"; do
+            gh search repos "$q" --limit 50 --json fullName --jq '.[].fullName' >> found.txt || true
+          done
+          tr 'A-Z' 'a-z' < found.txt | sort -u > found.norm
+
+          { grep -ohiE 'github\.com/[a-z0-9_.-]+/[a-z0-9_.-]+' README.md CONTRIBUTING.md || true; } \
+            | sed -E 's#^github\.com/##I; s#\.git$##; s#\.+$##' | tr 'A-Z' 'a-z' > listed.txt
+          { grep -vE '^[[:space:]]*(#|$)' .github/discover-ignore.txt || true; } \
+            | sed -E 's/[[:space:]].*//' | tr 'A-Z' 'a-z' >> listed.txt
+          echo "${GITHUB_REPOSITORY,,}" >> listed.txt
+          sort -u listed.txt -o listed.txt
+
+          comm -23 found.norm listed.txt > new.txt
+          echo "Found $(wc -l < found.norm) repositories, $(wc -l < new.txt) new."
+          cat new.txt
+
+      - name: Open or update the discovery issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -u
+          if [ ! -s new.txt ]; then
+            echo "Nothing new."
+            exit 0
+          fi
+          gh label create discovery --color 0e8a16 --description "New projects found by the weekly search" 2>/dev/null || true
+          {
+            echo "The weekly search found these repositories, which are neither in the list nor in \`.github/discover-ignore.txt\`."
+            echo
+            echo "Check each one against the [contribution guidelines](https://github.com/${GITHUB_REPOSITORY}/blob/HEAD/CONTRIBUTING.md), then add it to the README or to the ignore file."
+            echo
+            while read -r r; do echo "- [ ] [$r](https://github.com/$r)"; done < new.txt
+          } > body.md
+          num=$(gh issue list --label discovery --state open --json number --jq '.[0].number // empty')
+          if [ -n "$num" ]; then
+            gh issue edit "$num" --body-file body.md
+          else
+            gh issue create --title "New MGU projects to review" --label discovery --body-file body.md
+          fi
