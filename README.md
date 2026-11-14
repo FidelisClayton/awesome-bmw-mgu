@@ -4,7 +4,7 @@
 
 **Unofficial.** Nothing here is made, endorsed or supported by BMW AG. Rooting and modding a head unit is at your own risk: it can reset the car's coding, remove Digital Key pairings and, in the worst case, leave the head unit unusable. Read [Start here safely](#start-here-safely) before you install anything.
 
-Labels were checked against each project's own README and manifests on **2026-11-06**. Projects change fast, so read the repository before you install.
+Labels were checked against each project's own README and manifests on **2026-11-06**, and EQ Config on **2026-11-14**. Projects change fast, so read the repository before you install.
 
 ## Contents
 
@@ -89,6 +89,7 @@ Labels were checked against each project's own README and manifests on **2026-11
 
 Several of these can be set to keep playing while the car moves. That is for passengers only: the driver must never watch the screen, and it may be illegal where you drive.
 
+- [timokhin/id7-eq-config](https://github.com/timokhin/id7-eq-config) - **EQ Config** adjusts sound profiles, balance, fade and surround on the head unit. Tested with ID7 + Harman Kardon. `📱 app` `🚗 car-tested` `ID7`
 - [hexlay/idrive7-custom-apps](https://github.com/hexlay/idrive7-custom-apps) - A Spotify Connect controller and library browser for the centre screen, and **M Copilot**, which answers questions about the car from 24 topics (health check, warning lights and faults, service and more). Its BDC coding tool is not offered yet. `📱 app` `🌐 internet` `❓ untested?` `ID7`
 - [JustAnotherPU/ridetube](https://github.com/JustAnotherPU/ridetube) - An unofficial YouTube client with TV sign-in, subscriptions and Watch later. While driving it switches to a podcast view. `📱 app` `🔓 root tool` `🌐 internet` `🚗 car-tested` (X5 xDrive45e G05) `ID7`
 - [JustAnotherPU/ridewatch](https://github.com/JustAnotherPU/ridewatch) - Home cameras (UniFi Protect, any RTSP camera) on the centre screen, parked only by default. Its stream is unencrypted, so don't expose its port to the internet. `📱 app` `🔓 root tool` `🌐 internet` `❓ untested?` `ID7`
