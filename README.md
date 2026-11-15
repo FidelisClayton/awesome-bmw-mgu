@@ -84,6 +84,7 @@ Labels were checked against each project's own README and manifests on **2026-11
 - [benspa900/mon-vitals-idrive7](https://github.com/benspa900/mon-vitals-idrive7) - A personal dashboard built on M Vitals. Demo data stays off unless you switch it on. French README. `📱 app` `❓ untested?` `ID7`
 - [dzooky/bmrmodz](https://github.com/dzooky/bmrmodz) - An Oil Service Assistant (engine and gearbox oil temperatures for service procedures, read-only), built on the idrive7-apps kit. DPF tools are still being built. `📱 app` `🔓 root tool` `❓ untested?` `ID7`
 - [nickgcode/idrive7-apps](https://github.com/nickgcode/idrive7-apps) - G's Dash (with a Spotify panel), G's Music and G's TV (channels from the Internet Archive), with optional picks on the cluster and HUD. `📱 app` `🌐 internet` `❓ untested?` `ID7`
+- [idrive-labs/sideways](https://github.com/idrive-labs/sideways) - Drift telemetry on the centre display from the car's own sensors: live drift angle with counter-steer and tyre slip, chained scoring up to x6, replays with a free camera, a video of each drift made on your phone from a QR code, and an optional worldwide leaderboard. Installs from its Store source `idrive-labs/mgu-apps`. For closed ground only. `📱 app` `❓ untested?` `ID7` `ID8`
 
 ## Media and streaming
 
