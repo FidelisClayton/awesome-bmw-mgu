@@ -111,6 +111,7 @@ These send commands to the car's control units or change its coding. They carry 
 - [sembsa/idrive7-ambient](https://github.com/sembsa/idrive7-ambient) - Ambient light experiments through the car's comfort-function service. `📱 app` `✍️ changes the car` `❓ untested?`
 - [NamelsMissing/mgu-apps](https://github.com/NamelsMissing/mgu-apps) - G21 ambient light and steering-wheel heating, with safety checks before each command, plus a custom cluster, a DPF monitor, game apps, a video hub and a phone terminal, and a `phone-bridge` tool. Its README says some parts are not verified on a car yet. `📱 app` `🔓 root tool` `✍️ changes the car` `🌐 internet` `❓ untested?`
 - [istt1899/x3](https://github.com/istt1899/x3) - A coding catalogue and read-only control-unit discovery for the X3 (G01), as a Store source. Russian README. `✍️ changes the car` `❓ untested?`
+- [mazzahaker/idrive8-features](https://github.com/mazzahaker/idrive8-features) - xDriveRemover reads xDrive diagnostics and can request rear-wheel-drive mode. An earlier build received an RWD status on a G23 with the engine off and triggered a BMW four-wheel-drive warning. `📱 app` `✍️ changes the car` `🚗 car-tested` (G23, ID8, partly) `ID7` `ID8`
 
 ## System tweaks
 
