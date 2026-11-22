@@ -73,6 +73,7 @@ Labels were checked against each project's own README and manifests on **2026-11
 - [Vizualyse/idrive-apps](https://github.com/Vizualyse/idrive-apps) - **Cast to cluster** puts a stream from your phone on the cluster, the HUD or the centre screen, and gets CarPlay's cluster map through a hook preloaded into CarPlay. Also **Moonlight** game streaming. A tech demo. `🔓 root tool` `✍️ changes the car` `🧪 not car-tested` (bench unit) `ID7`
 - [Impossible43/vlad-mgu-apps](https://github.com/Impossible43/vlad-mgu-apps) - An experimental mirror of the CarPlay Dashboard map. Version 0.1.0 worked on an X3 G01 apart from layout detection and scaling. `📱 app` `🚗 car-tested` (partly) `ID7`
 - [noth4m4d/mgu-hamadstools](https://github.com/noth4m4d/mgu-hamadstools) - AirPlay screen mirroring and Waze Cards. The picture is hidden while driving by default. `🔓 root tool` `📱 app` `❓ untested?` `ID7`
+- [Zakh294/bmw-sugar-apps](https://github.com/Zakh294/bmw-sugar-apps) - **SpeedCam**: offline speed-camera warnings on the HUD, the cluster and inside the Waze / Google map on the cluster, from the car's own GPS, with an optional chime over the music. Cameras for Ukraine (the official police list), Europe and the US states (OpenStreetMap), updated monthly; off by default where such warnings are not allowed (Germany, Switzerland and others), danger zones only in France. Needs cluster-render. Eight languages. `📱 app` `🚗 car-tested` (2021 X3 G01) `ID7`
 
 ## Driving data and diagnostics
 
